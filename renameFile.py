@@ -1,8 +1,11 @@
 import os
 
+# Get the current directory path
+current_directory = os.getcwd()
+
 def remove_special_characters(filename):
     # Loại bỏ các ký tự đặc biệt
-    special_chars = "!@#$%^&*()[]{};:,./<>?\|`~-=_+0123456789"
+    special_chars = "!@#$%^&*()[]{};:,./<>?\\|`~-=_+0123456789"
     for char in special_chars:
         filename = filename.replace(char, "")
     return filename
@@ -27,7 +30,7 @@ def rename_files(folder_path):
             os.rename(old_filepath, new_filepath)
 
 # Đường dẫn thư mục chứa các tệp
-folder_path = 'D:/Projects/TestAudio/audio'
+folder_path = f'{current_directory}/audio'
 
 # Gọi hàm để đổi tên các tệp
 rename_files(folder_path)
