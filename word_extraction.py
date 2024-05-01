@@ -1,11 +1,12 @@
 import speech_recognition as sr
 from pydub import AudioSegment
+from database import db
 
 # Initialize the recognizer
 recognizer = sr.Recognizer()
 
 # Load the MP3 audio file
-mp3_audio_file = "ss2.mp3"
+mp3_audio_file = "audio/1_PresidentTrumpandTheFirstLadyAttendtheGovernorsBallmpmp.mp3"
 wav_audio_file = "converted_audio.wav"
 
 # Convert MP3 to WAV
@@ -24,12 +25,7 @@ with sr.AudioFile(wav_audio_file) as source:
         # Use the recognizer to convert speech to text
         text = recognizer.recognize_google(audio)
         print("Transcription: ", text)
-        
-        file_path = "output.txt"
-        # Open the file in write mode ('w')
-        with open(file_path, "w") as file:
-            # Write the text to the file
-            file.write(text)
+        db.save_word_extraction(text)
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand the audio.")
     except sr.RequestError as e:
