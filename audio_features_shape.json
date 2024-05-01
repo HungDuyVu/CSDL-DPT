@@ -1,0 +1,122 @@
+{
+    "ss1.mp3": {
+        "MFCC": [
+            13,
+            3505
+        ],
+        "Chroma": [
+            12,
+            3505
+        ],
+        "Spectral Contrast": [
+            7,
+            3505
+        ],
+        "Zero-Crossing Rate": [
+            1,
+            3505
+        ],
+        "RMS": [
+            1,
+            3505
+        ],
+        "Spectral Centroid": [
+            1,
+            3505
+        ],
+        "Spectral Bandwidth": [
+            1,
+            3505
+        ]
+    },
+    "ss2.mp3": {
+        "MFCC": [
+            13,
+            2549
+        ],
+        "Chroma": [
+            12,
+            2549
+        ],
+        "Spectral Contrast": [
+            7,
+            2549
+        ],
+        "Zero-Crossing Rate": [
+            1,
+            2549
+        ],
+        "RMS": [
+            1,
+            2549
+        ],
+        "Spectral Centroid": [
+            1,
+            2549
+        ],
+        "Spectral Bandwidth": [
+            1,
+            2549
+        ]
+    },
+    "ss3.mp3": {
+        "MFCC": [
+            13,
+            10643
+        ],
+        "Chroma": [
+            12,
+            10643
+        ],
+        "Spectral Contrast": [
+            7,
+            10643
+        ],
+        "Zero-Crossing Rate": [
+            1,
+            10643
+        ],
+        "RMS": [
+            1,
+            10643
+        ],
+        "Spectral Centroid": [
+            1,
+            10643
+        ],
+        "Spectral Bandwidth": [
+            1,
+            10643
+        ]
+    },
+    "ss4.mp3": {
+        "MFCC": [
+            13,
+            3277
+        ],
+        "Chroma": [
+            12,
+            3277
+        ],
+        "Spectral Contrast": [
+            7,
+            3277
+        ],
+        "Zero-Crossing Rate": [
+            1,
+            3277
+        ],
+        "RMS": [
+            1,
+            3277
+        ],
+        "Spectral Centroid": [
+            1,
+            3277
+        ],
+        "Spectral Bandwidth": [
+            1,
+            3277
+        ]
+    }
+}
