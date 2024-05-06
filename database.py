@@ -48,10 +48,19 @@ class Database():
         results = mycursor.fetchall()
         return results
 
-    def save_word_extraction(self,content):
+    # def save_word_extraction(self,content):
+    #     mycursor = mydb.cursor()
+    #     sql = "INSERT INTO audio (name, content) VALUES (%s, %s)"
+    #     values = ('test', content)
+    #
+    #     mycursor.execute(sql, values)
+    #
+    #     # Remember to commit the transaction if you want to make the changes permanent
+    #     mydb.commit()
+    def save_word_extraction(self,content,file_name):
         mycursor = mydb.cursor()
-        sql = "INSERT INTO audio (name, content) VALUES (%s, %s)"
-        values = ('test', content)
+        sql = "UPDATE audio SET content = %s WHERE name = %s"
+        values = (content, file_name)
 
         mycursor.execute(sql, values)
 
@@ -67,4 +76,19 @@ class Database():
 
         # Remember to commit the transaction if you want to make the changes permanent
         mydb.commit()
+
+    def remove_all_audio_information(self):
+        mycursor = mydb.cursor()
+        sql = "DELETE FROM audio"
+
+        mycursor.execute(sql)
+        mydb.commit()
+
+    def get_file_name_by_id(self,id):
+        mycursor = mydb.cursor()
+        sql = "SELECT * FROM audio WHERE id = %s"
+
+        mycursor.execute(sql,(id,))
+        results = mycursor.fetchall()
+        return results[0][1]
 db = Database()

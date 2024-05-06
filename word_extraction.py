@@ -19,6 +19,10 @@ class Extraction():
     def save_audio_list(self):
         for file in self.get_audio_list():
             db.save_audio_name(file)
+
+    def extract_content_words_by_id(self,id):
+        file_name = db.get_file_name_by_id(id)
+        return self.extract_content_words(file_name)
     def extract_content_words(self,file_name):
         mp3_audio_file = f"audio/{file_name}"
         wav_audio_file = "converted_audio.wav"
@@ -39,7 +43,8 @@ class Extraction():
                 # Use the recognizer to convert speech to text
                 text = recognizer.recognize_google(audio)
                 print("Transcription: ", text)
-                db.save_word_extraction(text)
+                db.save_word_extraction(text,file_name)
+                return text
             except sr.UnknownValueError:
                 print("Google Speech Recognition could not understand the audio.")
             except sr.RequestError as e:
